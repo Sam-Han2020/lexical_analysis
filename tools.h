@@ -9,33 +9,35 @@ using namespace std;
 
 #include <vector>
 
+// 产生式类
 class Transfer
 {
 public:
-    string A;
-    string input;
-    string B;
-    void printT();
+    string A; // A状态
+    string input; // 输入input
+    string B; // 转化为B状态
+    void printT(); // 输出产生式
 };
 
+// 状态类，表示一个状态和它的产生式，作为FA的一行
 class Status
 {
     string name; // 状态名
-    vector<Transfer*> trans;
+    vector<Transfer*> trans; // 产生式的集合
 public:
-    void insertT(string input,string B);
-    void printS();
-    void setName(string name);
+    void setName(string name); // 定义产生式名
+    void insertT(string input,string B); // 插入产生式
+    void printS(); // 输出状态和它的产生式在一行
 };
 
-// fa类
+// FA类
 class FA
 {
-    vector<Status*> statuset;
+    vector<Status*> statuset; // 状态集合
 public:
-    void init();
-    void insertS(Status* s);
-    void printFA();
+    void init(); // 初始化，从文字读取FA
+    void insertS(Status* s); // 插入一个状态
+    void printFA(); // 把FA按照文字格式输出
 };
 
 
