@@ -11,10 +11,7 @@ void test00()
 {
     // 测试代码
     FA nfa;
-    Status *s = new Status;
-    s->setName("A");
-    s->insertT("f","B");
-    nfa.insertS(s);
+    nfa.init("testfile.txt"); // 可以用读取文件的方式，初始化FA
     nfa.printFA();
 }
 

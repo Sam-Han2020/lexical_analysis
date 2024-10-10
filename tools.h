@@ -35,7 +35,7 @@ class FA
 {
     vector<Status*> statuset; // 状态集合
 public:
-    void init(); // 初始化，从文字读取FA
+    void init(string filename); // 初始化，从文字读取FA
     void insertS(Status* s); // 插入一个状态
     void printFA(); // 把FA按照文字格式输出
 };
