@@ -15,9 +15,9 @@ void test00()
     nfa.printFA();
 }
 
-string input;
+string input; // 输入的正规式
 
-FA nfa,dfa,midfa;
+FA nfa,dfa,midfa; // 自动机
 
 int main()
 {
