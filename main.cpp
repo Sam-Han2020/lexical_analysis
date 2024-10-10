@@ -15,8 +15,17 @@ void test00()
     nfa.printFA();
 }
 
+string input;
+
+FA nfa,dfa,midfa;
+
 int main()
 {
-    test00();
+    // test00();
+    cin>>input;
+    re2nfa(input,&nfa); // Regular Expression -> NFA
+    nfa2dfa(&nfa,&dfa); // NFA -> DFA
+    mini_dfa(&dfa,&midfa); // DFA MINIMIZE
+    dfa2code(&midfa); // DFA -> CODE (OUTPUT)
     return 0;
 }
