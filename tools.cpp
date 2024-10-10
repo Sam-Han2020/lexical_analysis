@@ -27,6 +27,11 @@ void Status::printS()
     cout<<endl;
 }
 
+void Status::setName(string name)
+{
+    this->name = name;
+}
+
 void FA::init()
 {
     // 读取输入的FA表示字符串，代码未实现

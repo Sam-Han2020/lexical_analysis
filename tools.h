@@ -1,28 +1,13 @@
 /*
 INTERFACE
 */
+
+#pragma once
+
 #include <iostream>
 using namespace std;
 
 #include <vector>
-
-// fa类
-class FA
-{
-    vector<Status*> statuset;
-    void init();
-    void insertS(Status* s);
-    void printFA();
-};
-
-class Status
-{
-    string name; // 状态名
-    vector<Transfer*> trans;
-public:
-    void insertT(string input,string B);
-    void printS();
-};
 
 class Transfer
 {
@@ -32,6 +17,28 @@ public:
     string B;
     void printT();
 };
+
+class Status
+{
+    string name; // 状态名
+    vector<Transfer*> trans;
+public:
+    void insertT(string input,string B);
+    void printS();
+    void setName(string name);
+};
+
+// fa类
+class FA
+{
+    vector<Status*> statuset;
+public:
+    void init();
+    void insertS(Status* s);
+    void printFA();
+};
+
+
 
 // Regular Expression -> NFA
 void re2dfa(string re,FA *nfa); // re接受输入的正规式，将生成的结果赋值给nfa
